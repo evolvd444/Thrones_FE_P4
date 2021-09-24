@@ -3,12 +3,18 @@
     justify-content: center;
     align-items: center;
 
-    background-image: radial-gradient( circle farthest-corner at 48% 50%,  rgb(37, 249, 178) 0%, rgba(8,70,218,1) 90% );
+    /* background-image: radial-gradient( circle farthest-corner at 48% 50%,  rgb(37, 249, 178) 0%, rgba(8,70,218,1) 90% ); */
 
     min-width: 100vw;
     min-height: 100vh;
+    
 }
-
+body{
+    background-image: radial-gradient( circle farthest-corner at 48% 50%,  rgb(37, 249, 178) 0%, rgba(8,70,218,1) 90% );
+}
+/* 
+#ffd89b >
+#19547b */
 .login-form-container{
     display: flex;
     flex-direction: column;
@@ -73,4 +79,9 @@
 .login-failed{
     color: crimson;
     align-self: center;
+}
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
