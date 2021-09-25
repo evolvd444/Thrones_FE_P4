@@ -1,10 +1,11 @@
 import React, {useState , useEffect} from 'react';
 import {GoogleMap , useLoadScript} from '@react-google-maps/api'
 import '../css/ThroneMap.css'
+import Dashboard from './Dashboard';
 
 const libraries = ["places"]
 
-export default function ThroneList() {
+export default function ThroneList(props) {
     const [gMap , setGMap] = useState(null)
     const [loading , setLoading] = useState(true)
 
@@ -13,9 +14,20 @@ export default function ThroneList() {
         height: "100%",
     };
     const center = {
-        lat: 43,
-        lng: -79,
+        lat: props.gLat,
+        lng: props.gLng,
+        //+LAT = N
+        //-LAT = S
+        //+lng = E
+        //-lng = W
     };
+
+    useEffect(() => {
+        center.lat = props.gLat
+        center.lng = props.gLng
+        console.log('change')
+    },[props.gLat , props.gLng])
+    
     const {isLoaded , loadError} = useLoadScript({
         googleMapsApiKey: 'AIzaSyAcwVL3CnXa5asAIEweJ1DGP6pMUrTqK_0',
         libraries
@@ -29,12 +41,13 @@ export default function ThroneList() {
         if(isLoaded){
             setGMap(<GoogleMap 
                 mapContainerStyle ={mapContainerStyle} 
-                zoom = {8}
+                zoom = {13}
                 center = {center}
             ></GoogleMap>)
         }
-    },[isLoaded])
-    
+    },[isLoaded , center.lat , center.lng])
+
+
     if(loading)
         return null;
     else{

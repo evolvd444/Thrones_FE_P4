@@ -3,7 +3,7 @@ import uploadIcon from '../images/upload-icon.png'
 import submitIcon from '../images/submit-icon.png'
 import deleteIcon from '../images/delete-icon.png'
 
-export default function profile() {
+export default function Profile() {
     return (
         <div className = 'profile'>
             <div className = 'pfp-username'>
