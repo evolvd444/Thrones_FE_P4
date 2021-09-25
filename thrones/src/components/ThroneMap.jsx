@@ -21,8 +21,8 @@ export default function ThroneList() {
         libraries
     })
 
-    // if(loadError) console.log("Error loading maps")
-    // if(!isLoaded) console.log("Loading Maps")
+    if(loadError) console.log("Error loading maps")
+    if(!isLoaded) console.log("Loading Maps")
 
     useEffect(() => {
         setLoading(false) 
