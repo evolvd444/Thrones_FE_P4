@@ -5,6 +5,8 @@ import ThroneMap from './ThroneMap'
 export default function Dashboard() {
 
     const [loading , setLoading] = useState(true)
+    const [gLat , setGLat] = useState(41.08)
+    const [gLng , setGLng] = useState(74.14)
 
     //loading
     useEffect(() => {
@@ -17,8 +19,8 @@ export default function Dashboard() {
     else{
         return (
             <div>
-                <ThroneList />
-                <ThroneMap />
+                <ThroneList setGLat = {setGLat} setGLng = {setGLng}      gLat = {gLat} gLng = {gLng}/>
+                <ThroneMap gLat = {gLat} gLng = {gLng}/>
             </div>
         );  
     }

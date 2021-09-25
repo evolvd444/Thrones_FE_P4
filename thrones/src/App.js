@@ -4,7 +4,7 @@ import './css/App.css';
 import { Route} from "react-router-dom";
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
-import Profile from './components/Profile';
+import Profile from './components/Profile'
 import MainNav from './components/MainNav.jsx';
 
 

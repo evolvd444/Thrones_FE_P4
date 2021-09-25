@@ -4,9 +4,10 @@ export default function ThroneList() {
     return (
         <div className = 'nav'>
             <nav>
-                <span>NAV</span>
                 <Link to = '/profile'>Profile</Link>
                 <Link to = '/about'>About</Link>
+                <Link to = '/'>Home</Link>
+
                 <span className = 'search-bar'>
                     Find My Throne:
                     <input 

@@ -3,3 +3,8 @@
     width: 20%;
     
 }
+.throne-filters{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
