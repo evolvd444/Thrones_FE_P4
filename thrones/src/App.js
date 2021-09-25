@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+import React from 'react'
 import './css/App.css';
 import Landing from './components/Landing';
 import { Route } from "react-router-dom";
