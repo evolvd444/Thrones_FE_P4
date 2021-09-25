@@ -1,6 +1,5 @@
 import React, {useState , useEffect} from 'react';
 import ThroneList from './ThroneList';
-import MainNav from './MainNav'
 import ThroneMap from './ThroneMap'
 
 export default function Dashboard() {
@@ -18,11 +17,8 @@ export default function Dashboard() {
     else{
         return (
             <div>
-                <MainNav />
                 <ThroneList />
                 <ThroneMap />
-                <p>dashboard</p>
-                
             </div>
         );  
     }

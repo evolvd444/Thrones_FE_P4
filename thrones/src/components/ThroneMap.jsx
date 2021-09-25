@@ -23,33 +23,22 @@ export default function ThroneList() {
 
     if(loadError) console.log("Error loading maps")
     if(!isLoaded) console.log("Loading Maps")
-
+    
     useEffect(() => {
         setLoading(false) 
-        
-        setGMap(
-            <GoogleMap 
+        if(isLoaded){
+            setGMap(<GoogleMap 
                 mapContainerStyle ={mapContainerStyle} 
                 zoom = {8}
                 center = {center}
             ></GoogleMap>)
-        
-        // setTimeout( () => {
-        //     setGMap(
-        //         <GoogleMap 
-        //             mapContainerStyle ={mapContainerStyle} 
-        //             zoom = {8}
-        //             center = {center}
-        //         ></GoogleMap>)
-        //     }
-        // , 5)
-        
-        
-    },[loading])
+        }
+    },[isLoaded])
     
     if(loading)
         return null;
     else{
+        
         return (
             <div id = 'map'>
                 {gMap}
