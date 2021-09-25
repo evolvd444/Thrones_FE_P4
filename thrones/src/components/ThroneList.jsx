@@ -1,6 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import maleIcon from '../images/male-icon.png' 
 import femaleIcon from '../images/female-icon.png'
+import '../css/ThroneList.css'
 export default function ThroneList() {
     const throneItems = []
     

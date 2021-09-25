@@ -3,12 +3,10 @@ import "../css/Landing.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Landing() {
+function Landing({ userLoggedIn, setUserLoggedIn }) {
   const [usernameInput, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
   const [failedLogin, setFailedLogin] = useState("none");
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [redirect, setRedirect] = useState("/");
 
   //   function login(username, password) {
   //     axios
@@ -49,16 +47,8 @@ function Landing() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //new code
-    setLoggedIn(true);
-    setRedirect("/dashboard");
-    if (loggedIn) {
-      window.location.href = redirect;
-    } //end of new code
-
-    // login(usernameInput, password)
+    setUserLoggedIn('luke')
     resetFields();
-    console.log(redirect);
   }
 
   function resetFields() {
