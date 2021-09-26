@@ -29,7 +29,7 @@ export default function ThroneList(props) {
     },[props.gLat , props.gLng])
     
     const {isLoaded , loadError} = useLoadScript({
-        googleMapsApiKey: 'AIzaSyAcwVL3CnXa5asAIEweJ1DGP6pMUrTqK_0',
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries
     })
 
