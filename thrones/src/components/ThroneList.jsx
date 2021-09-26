@@ -4,7 +4,7 @@ import femaleIcon from '../images/female-icon.png'
 import Dashboard from './Dashboard';
 import '../css/ThroneList.css'
 
-let aaa = 0
+let aaa = 10
 export default function ThroneList(props) {
     const throneItems = []
     
@@ -23,8 +23,7 @@ export default function ThroneList(props) {
         props.setGLng(aaa)
         aaa++;
         console.log(`lat: ${props.gLat} \n long: ${props.gLng}`)
-        // setGLat(10)
-        // setGLng(10)
+        
         //+LAT = N
         //-LAT = S
         //+lng = E
