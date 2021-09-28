@@ -1,25 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import '../css/Profile.css'
 import uploadIcon from '../images/upload-icon.png'
 import submitIcon from '../images/submit-icon.png'
 import deleteIcon from '../images/delete-icon.png'
+import axios from "axios"
 
-export default function Profile() {
-    return (
-        <div className = 'profile'>
-            <div className = 'pfp-username'>
-                <img className = 'pfp' src="data:image/jpeg;base64,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" alt="" />
-                <p className = 'username'>username</p>
+export default function Profile(){
+    const [userList , setUserList] = useState('username')
+    const [loading , setLoading] = useState(true)
+
+    function displayUser(){
+        
+        fetch("http://localhost:8000/api/thrones/")
+            .then(res => res.json())
+            .then(res => {
+                setUserList(res)
+            })
+            .catch(err => {
+                console.error(err)
+            })        
+    }    
+    useEffect(() => {
+        displayUser()
+        setLoading(false)
+    },[loading])
+
+    if(loading){
+        //console.log(userList)
+        return null
+    }
+    else{
+        return (
+            <div className = 'profile'>
+                <div className = 'pfp-username'>
+                    {/* <img className = 'pfp' src={userList[0].featured_image} alt="" />
+                    <p className = 'username'>{userList[0].owner}</p> */}
+                </div>
+                <div class = 'row'>
+                    <textarea class='col-6' rows="7" placeholder = 'Leave a review here:' style = {{resize: 'none' }}></textarea>  
+                    <div class = 'col-6'>
+                        <img class='col-2 row' src={uploadIcon} alt="" style = {{width: '5%', height: 'auto' , marginTop: '2%'}}/>
+                        <img class='col-2 row' src = {deleteIcon} alt = "" style = {{width: '4%', height: 'auto' , marginTop: '2%'}}/>
+                        <button class='col-2 row btn btn-primary' type = "submit" style = {{width: '10%' , marginTop: '2%'}}>Submit</button>
+                    </div>
+                    
+                </div>
+                
             </div>
-            <div className = 'review-container'>
-                <form>
-                    <input type="submit" value="Leave a review" />
-                    <input type="text" style = {{width: '40vw', height: '40vh'}}/>
-                </form>
-                <img src={uploadIcon} alt="" style = {{width: '8vw', height: '10vh'}}/>
-                <img src={submitIcon} alt="" style = {{width: '8vw', height: '10vh'}}/>
-                <img src={deleteIcon} alt="" style = {{width: '8vw', height: '10vh'}}/>
-            </div>
-            
-        </div>
-    );
+        );
+    }
+    
 }

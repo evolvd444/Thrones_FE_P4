@@ -1,4 +1,8 @@
 #map{
     height: 60vh;
     width: 40vw;
+    margin: none;
+}
+.throne-container{
+    margin: none
 }
