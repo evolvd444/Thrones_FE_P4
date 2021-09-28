@@ -1,7 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import {GoogleMap , useLoadScript} from '@react-google-maps/api'
 import '../css/ThroneMap.css'
-import Dashboard from './Dashboard';
+// import Dashboard from './Dashboard';
 
 const libraries = ["places"]
 

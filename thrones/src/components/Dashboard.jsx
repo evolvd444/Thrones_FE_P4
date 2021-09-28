@@ -1,6 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import ThroneList from './ThroneList';
 import ThroneMap from './ThroneMap'
+import '../css/Dashboard.css'
 
 export default function Dashboard() {
 
@@ -18,7 +19,7 @@ export default function Dashboard() {
     }
     else{
         return (
-            <div>
+            <div id = 'dashboard'>
                 <ThroneList setGLat = {setGLat} setGLng = {setGLng}/>
                 <ThroneMap gLat = {gLat} gLng = {gLng}/>
             </div>

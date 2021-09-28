@@ -34,11 +34,12 @@ export default function ThroneList(props) {
     return (
         <div className = 'throne-container'>
             
-            <ul className = 'throne-filters'>
-                <li className = 'male'><img src={maleIcon} alt=":(" style = {{height: '5vh'}}  /></li>
-                <li className = 'female'><img src={femaleIcon} alt="" style = {{height: '5vh'}}/></li>
+        <div class = 'row' className = 'throne-filters'>
+            <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: 'auto'}}  />
+            <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: 'auto'}}/>
+                
                 {/* <li></li> stretch goal(handicap accessible)*/}
-            </ul>
+            </div>
             <div className = 'throne-list'>
                 {throneItems}
             </div>

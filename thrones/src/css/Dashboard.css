@@ -1,0 +1,6 @@
+#dashboard{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    /* justify-content: space-evenly; */
+}

@@ -4,7 +4,5 @@
     
 }
 .throne-filters{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
+    list-style-type: none !important;
 }
