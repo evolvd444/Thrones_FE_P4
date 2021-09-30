@@ -1,7 +1,7 @@
 import React, {useState , useEffect}from 'react';
 import {Link} from 'react-router-dom'
 import '../css/MainNav.css'
-export default function ThroneList() {
+export default function ThroneList({setUserLoggedIn}) {
     return (
         <div className = 'main-nav'>
             <nav class = 'navbar navbar-expand navbar-light bg-light'>
@@ -17,7 +17,10 @@ export default function ThroneList() {
                         </li>
                         <li class="nav-item">
                             <Link to = '/about' class="nav-link">About</Link>
-                        </li>                     
+                        </li>     
+                        <li>
+                            <button onClick = {()=> setUserLoggedIn(false)}>logout</button>
+                        </li>                
                     </ul>     
                 </div>
                 <span class = 'col-5'className = 'searchbar-label' class="nav-item">Find a throne: </span>   

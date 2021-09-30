@@ -21,7 +21,7 @@ export default function Dashboard({userList}) {
     else{
         return (
             <div id = 'dashboard'>
-                <ThroneList setGLat = {setGLat} setGLng = {setGLng}/>
+                <ThroneList gLat = {gLat} gLng = {gLng} setGLat = {setGLat} setGLng = {setGLng}/>
                 <ThroneMap gLat = {gLat} gLng = {gLng} userList = {userList}/>
             </div>
         );  
