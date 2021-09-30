@@ -30,7 +30,8 @@ function App() {
   },[])  
   
   if(!userLoggedIn){
-    return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn}/>
+    console.log(userList)
+    return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList={userList}/>
   }
   else{
     return (

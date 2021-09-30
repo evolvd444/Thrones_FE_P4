@@ -5,7 +5,7 @@ import '../css/ThroneMap.css'
 
 const libraries = ["places"]
 
-export default function ThroneList(props) {
+export default function ThroneMap(props) {
     const [gMap , setGMap] = useState(null)
     const [loading , setLoading] = useState(true)
 

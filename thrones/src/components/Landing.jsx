@@ -3,14 +3,69 @@ import "../css/Landing.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Landing({ userLoggedIn , setUserLoggedIn}) {
+function Landing({ userLoggedIn , setUserLoggedIn , userList} ) {
   const [usernameInput, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
   const [failedLogin, setFailedLogin] = useState("none");
 
-  const login = () => {
-
+  const login = (user , pass) => {
+    console.log(userList)
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    login(usernameInput , password)
+    // setUserLoggedIn('luke')
+    //test \/ \/ \/
+    localStorage.setItem('userLoggedIn' , true)
+    setUserLoggedIn(usernameInput)
+    resetFields();
+  }
+
+  function resetFields() {
+    setPassword("");
+    setUsernameInput("");
+  }
+
+  return (
+    <div className="landing-page-container">
+      <div className="login-form-container">
+        <h1 className="login-text">Thrones</h1>
+
+        <form className="login-form" onSubmit={handleSubmit}>
+          <input
+            required
+            type="text"
+            className="landing-page-username-input landing-text-input"
+            placeholder='Username'
+            onChange={(e) => setUsernameInput(e.target.value)}
+            value={usernameInput}
+          />
+
+          <input
+            required
+            type="password"
+            className="landing-page-password-input landing-text-input"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+
+          <input className="login-submit-btn" type="submit" value="Login" />
+
+          <p className="login-failed" style={{ display: failedLogin }}>
+            Incorrect username or password
+          </p>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Landing;
+
+
+
   //   function login(username, password) {
   //     axios
   //       .get("https://bugtracker-api-v1.herokuapp.com/api/users")
@@ -47,55 +102,3 @@ function Landing({ userLoggedIn , setUserLoggedIn}) {
   //         console.log(error)
   //       })
   //   }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    
-    // setUserLoggedIn('luke')
-    //test \/ \/ \/
-    localStorage.setItem('userLoggedIn' , true)
-    setUserLoggedIn(usernameInput)
-    resetFields();
-  }
-
-  function resetFields() {
-    setPassword("");
-    setUsernameInput("");
-  }
-
-  return (
-    <div className="landing-page-container">
-      <div className="login-form-container">
-        <h1 className="login-text">Thrones</h1>
-
-        <form className="login-form" onSubmit={handleSubmit}>
-          <input
-            required
-            type="text"
-            className="landing-page-username-input landing-text-input"
-            placeholder="Username"
-            onChange={(e) => setUsernameInput(e.target.value)}
-            value={usernameInput}
-          />
-
-          <input
-            required
-            type="password"
-            className="landing-page-password-input landing-text-input"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-
-          <input className="login-submit-btn" type="submit" value="Login" />
-
-          <p className="login-failed" style={{ display: failedLogin }}>
-            Incorrect username or password
-          </p>
-        </form>
-      </div>
-    </div>
-  );
-}
-
-export default Landing;
