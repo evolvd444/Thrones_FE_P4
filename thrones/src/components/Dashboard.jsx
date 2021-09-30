@@ -12,7 +12,7 @@ export default function Dashboard({userList}) {
     //loading
     useEffect(() => {
         setLoading(false)  
-        console.log(userList)  
+        // console.log(userList)  
     },[])
     
     if(loading){
