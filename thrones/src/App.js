@@ -11,24 +11,25 @@ import MainNav from './components/MainNav.jsx';
 
 function App() {
   const [userList , setUserList] = useState('username')
+  const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || true)
   const throneAPIPath = 'https://thrones-be.herokuapp.com/api/thrones/'
-  const [userLoggedIn, setUserLoggedIn] = useState(() => {
-    const saved = localStorage.getItem("userLoggedIn");
-    const initialValue = JSON.parse(saved);
-    return initialValue || '';
-  });
+
+  useEffect(()=>{
+    
+    console.log(userLoggedIn)
+  },[userLoggedIn])
+
   function getUser(){
     fetch(throneAPIPath)
         .then(res => res.json())
         .then(res => {setUserList(res)})
-        .catch(err => {console.error(err)})        
+        .catch(err => {console.error(err)})       
   }  
   useEffect(() => {
     getUser()
-    console.log(throneAPIPath)
   },[])  
   
-  if(userLoggedIn == ''){
+  if(!userLoggedIn){
     return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn}/>
   }
   else{
@@ -37,7 +38,7 @@ function App() {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-        <MainNav/>
+        <MainNav setUserLoggedIn = {setUserLoggedIn}/>
         <Route exact path = '/'
           render={(props) => <Dashboard {...props} userList={userList} />}
         />

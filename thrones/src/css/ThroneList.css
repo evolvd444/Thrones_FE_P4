@@ -1,11 +1,14 @@
 .throne-container{
     border: 1px solid black;
+    border-top: 0;
     width: 20%;
-    
+    padding-top: 2vh;
 }
 .throne-filters{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    list-style-type: none !important;
+    border-bottom: 1px solid black;
+    
+    /* list-style-type: none !important; */
 }

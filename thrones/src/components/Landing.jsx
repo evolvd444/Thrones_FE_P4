@@ -3,11 +3,14 @@ import "../css/Landing.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Landing({ userLoggedIn, setUserLoggedIn }) {
+function Landing({ userLoggedIn , setUserLoggedIn}) {
   const [usernameInput, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
   const [failedLogin, setFailedLogin] = useState("none");
 
+  const login = () => {
+
+  }
   //   function login(username, password) {
   //     axios
   //       .get("https://bugtracker-api-v1.herokuapp.com/api/users")
@@ -47,7 +50,11 @@ function Landing({ userLoggedIn, setUserLoggedIn }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setUserLoggedIn('luke')
+    
+    // setUserLoggedIn('luke')
+    //test \/ \/ \/
+    localStorage.setItem('userLoggedIn' , true)
+    setUserLoggedIn(usernameInput)
     resetFields();
   }
 
