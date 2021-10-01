@@ -4,27 +4,34 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Landing({ userLoggedIn , setUserLoggedIn , userList} ) {
-  const [usernameInput, setUsernameInput] = useState("");
+  const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
   const [failedLogin, setFailedLogin] = useState("none");
 
   const login = (user , pass) => {
-    console.log(userList)
+    userList.map( (e) => {
+      //successful login
+      if((e.user.username == username || e.user.email == username ) && (e.user.password == password)){
+        localStorage.setItem('userLoggedIn' , true)
+        setUserLoggedIn(true)
+        console.log('logged in!')
+      }
+      //unsuccessful login
+      else{
+        setFailedLogin("block")
+      }
+    })
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    login(usernameInput , password)
-    // setUserLoggedIn('luke')
-    //test \/ \/ \/
-    localStorage.setItem('userLoggedIn' , true)
-    setUserLoggedIn(usernameInput)
+    login(username , password)
     resetFields();
   }
 
   function resetFields() {
     setPassword("");
-    setUsernameInput("");
+    setusername("");
   }
 
   return (
@@ -38,8 +45,8 @@ function Landing({ userLoggedIn , setUserLoggedIn , userList} ) {
             type="text"
             className="landing-page-username-input landing-text-input"
             placeholder='Username'
-            onChange={(e) => setUsernameInput(e.target.value)}
-            value={usernameInput}
+            onChange={(e) => setusername(e.target.value)}
+            value={username}
           />
 
           <input

@@ -14,10 +14,9 @@ function App() {
   const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || true)
   const throneAPIPath = 'https://thrones-be.herokuapp.com/api/thrones/'
 
-  useEffect(()=>{
-    
-    console.log(userLoggedIn)
-  },[userLoggedIn])
+  // useEffect(()=>{
+  //   console.log(userLoggedIn)
+  // },[userLoggedIn])
 
   function getUser(){
     fetch(throneAPIPath)
@@ -30,7 +29,6 @@ function App() {
   },[])  
   
   if(!userLoggedIn){
-    console.log(userList)
     return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList={userList}/>
   }
   else{
