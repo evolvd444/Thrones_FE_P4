@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import '../css/Profile.css'
 import uploadIcon from '../images/upload-icon.png'
-import submitIcon from '../images/submit-icon.png'
 import deleteIcon from '../images/delete-icon.png'
 
-export default function Profile({userList}){
+export default function Profile(){
     
     const [loading , setLoading] = useState(true)
- 
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
     useEffect(() => {
         setLoading(false)
     },[loading])
 
-    if(loading || userList == 'username'){
+    if(loading){
         return null
     }
     else{
         return (
             <div className = 'profile'>
                 <div className = 'pfp-username'>
-                    <img className = 'profile-picture' src={userList[0].user.profile_image} alt="" />
-                    <p className = 'username'>{userList[0].user.username}</p>
+                    <img className = 'profile-picture' src={currentUser.user.profile_image} alt="" />
+                    <p className = 'username'>{currentUser.user.name}</p>
                 </div>
                 <div class = 'row'>
                     <textarea class='col-6' rows="7" placeholder = 'Leave a review here:' style = {{resize: 'none' }}></textarea>  

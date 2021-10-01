@@ -25,7 +25,6 @@ export default function ThroneMap(props) {
     useEffect(() => {
         center.lat = props.gLat
         center.lng = props.gLng
-        console.log('change')
     },[props.gLat , props.gLng])
     
     const {isLoaded , loadError} = useLoadScript({
