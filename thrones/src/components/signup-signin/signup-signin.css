@@ -1,0 +1,10 @@
+#signup-signin {
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 60vh;
+    margin-left: 30vw;
+    margin-top: 5%;
+    padding: 1%;
+}
