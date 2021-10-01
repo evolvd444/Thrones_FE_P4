@@ -23,10 +23,8 @@ export default function ThroneList(props) {
         }
     }
     const mapCord = () =>{
-        console.log(`lat: ${props.gLat}   lang: ${props.gLng}`)
         props.setGLat(props.gLat + aaa)
-        props.setGLng(props.gLng + aaa)
-        console.log(`newlat: ${props.gLat}   newlang: ${props.gLng}`)
+        props.setGLng(props.gLng + aaa)     
         aaa += 0.001;
         
         //+LAT = N

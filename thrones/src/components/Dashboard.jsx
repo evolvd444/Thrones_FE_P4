@@ -4,7 +4,7 @@ import ThroneMap from './ThroneMap'
 import '../css/Dashboard.css'
 
 export default function Dashboard({userList}) {
-
+    const [currentUser , setCurrentUser] = useState(JSON.parse(localStorage.getItem('currentUser')))
     const [loading , setLoading] = useState(true)
     const [gLat , setGLat] = useState(41.08)
     const [gLng , setGLng] = useState(-74.14)
@@ -12,7 +12,6 @@ export default function Dashboard({userList}) {
     //loading
     useEffect(() => {
         setLoading(false)  
-        // console.log(userList)  
     },[])
     
     if(loading){

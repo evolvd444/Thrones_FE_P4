@@ -7,16 +7,13 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile'
 import MainNav from './components/MainNav.jsx';
 import About from './components/About'
-// console.log(location)
 
 function App() {
-  const [userList , setUserList] = useState('username')
-  const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || true)
+  
+  const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || false)
+  //const [currentUser , setCurrentUser] = useState(null)
   const throneAPIPath = 'https://thrones-be.herokuapp.com/api/thrones/'
-
-  // useEffect(()=>{
-  //   console.log(userLoggedIn)
-  // },[userLoggedIn])
+  const [userList , setUserList] = useState('username')
 
   function getUser(){
     fetch(throneAPIPath)
@@ -26,10 +23,14 @@ function App() {
   }  
   useEffect(() => {
     getUser()
-  },[])  
-  
+  },[])
+
+  // useEffect(()=>{
+  //   console.log(userLoggedIn)
+  // },[userLoggedIn])
+
   if(!userLoggedIn){
-    return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList={userList}/>
+    return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> 
   }
   else{
     return (
@@ -37,13 +38,13 @@ function App() {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-        <MainNav setUserLoggedIn = {setUserLoggedIn}/>
+        <MainNav setUserLoggedIn = {setUserLoggedIn} />
+        {/* <Route exact path = {`/dashboard/${currentUser.id}`} */}
         <Route exact path = '/'
-          render={(props) => <Dashboard {...props} userList={userList} />}
+          render={(props) => <Dashboard {...props} />}
         />
         <Route exact path = '/profile'
-          render={(props) => <Profile {...props} userList={userList} />}
-          // throneAPIPath = {throneAPIPath}
+          render={(props) => <Profile {...props}/>}
         />
          <Route exact path = '/about' component={About} />
       </div>

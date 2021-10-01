@@ -2,6 +2,12 @@ import React, {useState , useEffect}from 'react';
 import {Link} from 'react-router-dom'
 import '../css/MainNav.css'
 export default function ThroneList({setUserLoggedIn}) {
+
+    const logout = () => {
+        setUserLoggedIn(false)
+        localStorage.removeItem('userLoggedIn' , true)
+        localStorage.removeItem('currentUser' , '')
+    }
     return (
         <div className = 'main-nav'>
             <nav class = 'navbar navbar-expand navbar-light bg-light'>
@@ -19,7 +25,7 @@ export default function ThroneList({setUserLoggedIn}) {
                             <Link to = '/about' class="nav-link">About</Link>
                         </li>     
                         <li>
-                            <button onClick = {()=> setUserLoggedIn(false)}>logout</button>
+                            <button onClick = {logout}>logout</button>
                         </li>                
                     </ul>     
                 </div>
