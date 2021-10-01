@@ -6,7 +6,7 @@ import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile'
 import MainNav from './components/MainNav.jsx';
-
+import About from './components/About'
 // console.log(location)
 
 function App() {
@@ -46,6 +46,7 @@ function App() {
           render={(props) => <Profile {...props} userList={userList} />}
           // throneAPIPath = {throneAPIPath}
         />
+         <Route exact path = '/about' component={About} />
       </div>
     );
   }
