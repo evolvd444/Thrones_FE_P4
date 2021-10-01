@@ -6,7 +6,9 @@ import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile'
 import MainNav from './components/MainNav.jsx';
-import About from './components/About'
+import About from './components/About';
+import SignInAndSignUpPage from './components/signup-signin/signup-signin';
+import './App.sass'
 // console.log(location)
 
 function App() {
@@ -46,6 +48,7 @@ function App() {
           // throneAPIPath = {throneAPIPath}
         />
          <Route exact path = '/about' component={About} />
+         <Route exact path = '/signin' component={SignInAndSignUpPage} />
       </div>
     );
   }
