@@ -34,7 +34,7 @@ function App() {
   // },[userLoggedIn])
 
   if(!userLoggedIn){
-    <Route exact path = '/signup' component={SignInAndSignUpPage} />
+    
     return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> 
   }
   else{
@@ -52,7 +52,7 @@ function App() {
           render={(props) => <Profile {...props}/>}
         />
          <Route exact path = '/about' component={About} />
-         
+         <Route exact path = '/signup' component={SignInAndSignUpPage} />
       </div>
     );
   }
