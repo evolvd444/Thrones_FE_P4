@@ -1,0 +1,90 @@
+* {
+	box-sizing: border-box;
+}
+
+#edit-account {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 32px;
+	background-size: cover;
+	background-color: blueviolet;
+	background-blend-mode: multiply;
+	
+	@media (min-width: 1024px){
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		height: 100vh;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding-top: 0;
+	}
+	
+}
+
+.avatar {
+	margin-bottom: 16px;
+	width: 320px;
+	
+	@media (min-width: 1024px){
+		width: 30vw;
+	}
+	
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	width: 320px;
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 1px;
+	margin: 0;
+	margin-bottom: 16px;
+}
+
+label {
+	color: #fff;
+	margin-bottom: 4px;
+}
+
+input, textarea {
+	margin-bottom: 16px;
+	padding: 8px;
+	font-size: 20px;
+	outline: 0;
+	
+	&:active, &:focus {
+		border: 2px solid #327cff;
+		background: #327cff;
+		color: #fff;
+	}
+	
+}
+
+button {
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 16px 0;
+	border-radius: 8px 24px 8px 24px;
+	border: 2px solid #327cff;
+	background-color: #327cff;
+	color: #fff;
+	outline: 0;
+	cursor: pointer;
+	margin-top: 8px;
+	
+	&:hover, &:active, &:focus {
+		background-color: #02348c;
+		border-color: #02348c;
+	}
+	
+}
