@@ -31,7 +31,7 @@ function Landing({setUserLoggedIn , userList} ) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    login()
+    login();
     resetFields();
   }
 
@@ -44,7 +44,7 @@ function Landing({setUserLoggedIn , userList} ) {
     <div className="landing-page-container">
       <div className="login-form-container">
         <h1 className="login-text">Thrones</h1>
-       
+       <p className="login-subtext"> ...because nothing beats a Royal Flush!</p>
         <img id= "throne-login-logo" src= {thronesLogo} alt=" thronesLogo" />
         
         <form className="login-form" onSubmit={handleSubmit}>
@@ -70,6 +70,12 @@ function Landing({setUserLoggedIn , userList} ) {
             type="submit" 
             value="Login" 
           />
+            <p>New User? Click Below:</p>
+           
+           <div id="newUser">
+               <Link className = "link" to = "/signup">Sign Up</Link>
+           </div>
+           <br />
           {/* `/dashboard/${currentUser.id}` <Link to = '/' />*/}
 
           <p className="login-failed" style={{ display: failedLogin }}>
