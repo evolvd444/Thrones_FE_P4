@@ -10,8 +10,6 @@ import About from './components/About/About.jsx';
 import SignInAndSignUpPage from './components/signup-signin/signup-signin';
 import './App.sass'
 
-// console.log(location)
-
 function App() {
   
   const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || false)
@@ -29,15 +27,18 @@ function App() {
     getUser()
   },[])
 
-  // useEffect(()=>{
-  //   console.log(userLoggedIn)
-  // },[userLoggedIn])
-
-
-  if(!userLoggedIn){
   if(!userLoggedIn && userList != 'username'){
-
-    return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> 
+      
+      return (
+        <div>
+          <Route exact path = '/signup' component={SignInAndSignUpPage} />
+          <Route exact path = '/'
+            render={(props) => <Landing {...props}  userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/>}
+          />
+          {/* <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> */}
+        </div>
+        
+      )
   }
   else{
     return (
@@ -54,7 +55,7 @@ function App() {
           render={(props) => <Profile {...props}/>}
         />
          <Route exact path = '/about' component={About} />
-         <Route exact path = '/signup' component={SignInAndSignUpPage} />
+         
       </div>
     );
   }
