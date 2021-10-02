@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/Landing.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import thronesLogo from "../images/throne-logo.png";
 function Landing({setUserLoggedIn , userList} ) {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
@@ -44,7 +44,9 @@ function Landing({setUserLoggedIn , userList} ) {
     <div className="landing-page-container">
       <div className="login-form-container">
         <h1 className="login-text">Thrones</h1>
-
+       
+        <img id= "throne-login-logo" src= {thronesLogo} alt=" thronesLogo" />
+        
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             required

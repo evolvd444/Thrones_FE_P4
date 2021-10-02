@@ -2,9 +2,12 @@
     background-color: aquamarine;
     display: flex;
     flex-direction: column;
-    width: 35vw;
-    height: 60vh;
+    max-width: 370px;
+    min-width: 340px;
+    
     margin-left: 30vw;
     margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 35vw;
     padding: 1%;
 }

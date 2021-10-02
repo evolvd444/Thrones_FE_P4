@@ -4,9 +4,9 @@
     align-items: center;
 
     /* background-image: radial-gradient( circle farthest-corner at 48% 50%,  rgb(37, 249, 178) 0%, rgba(8,70,218,1) 90% ); */
-
-    min-width: 100vw;
-    min-height: 100vh;
+    margin-top: 20vh;
+    min-width: auto;
+    min-height: auto;
     
 }
 body{
@@ -16,21 +16,39 @@ body{
 #ffd89b >
 #19547b */
 .login-form-container{
-    display: flex;
-    flex-direction: column;
-
-    /* background-image: radial-gradient( circle farthest-corner at 50% 50%,  rgba(140, 251, 37, 0.98) 0.1%, rgb(0, 128, 128) 99.8% ); */
-
-    width: 60vw;
-    max-width: 400px;
-
-    padding: 20px;
-    border-radius: 0.25rem;
-    box-shadow: 0px 0px 3px 1px rgb(157, 157, 157);
+  margin-top: -20%;
+  max-width: 375px;
+  max-height: 600px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0vh ;
+  background: rgba(52, 167, 216, 0.168);
+  box-shadow:
+  0 -10px 120px #fff,
+  10px 8px 20px rgba(16, 1, 17, 0.353),
+  -5px -5px 30px rgba(200, 0, 255, 0.514);
 }
-
+#throne-login-logo{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    
+}
 .login-form{
-    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 80%;
 }
 
 .login-form{
@@ -39,8 +57,9 @@ body{
 }
 
 .login-text{
-    color: #f8f8ff;
+    color: #a904c2;
     text-align: center;
+    margin: 10%;
 }
 
 

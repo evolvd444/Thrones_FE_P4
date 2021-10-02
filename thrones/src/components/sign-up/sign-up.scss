@@ -1,8 +1,8 @@
-.sign-up {
+#sign-up {
   display: flex;
   flex-direction: column;
-  width: 40vw;
-
+  width: 320px;
+  min-width: 300px;
   .title {
     margin: 10px 0;
   }

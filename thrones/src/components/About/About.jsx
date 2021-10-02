@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './About.css'
 function About(props) {
     return (
-        <div>
+        <div id = "about">
             <h1>Welcome to Thrones</h1>
             <p> We built this app for those who are boogie about where they put thier booty. 
                 Think of us like Yelp for restrooms. 
