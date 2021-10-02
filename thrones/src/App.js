@@ -32,7 +32,7 @@ function App() {
   //   console.log(userLoggedIn)
   // },[userLoggedIn])
 
-  if(!userLoggedIn){
+  if(!userLoggedIn && userList != 'username'){
     return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> 
   }
   else{
