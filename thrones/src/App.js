@@ -13,22 +13,29 @@ import './App.sass'
 function App() {
   
   const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || false)
-  //const [currentUser , setCurrentUser] = useState(null)
-  const throneAPIPath = 'https://thrones-be.herokuapp.com/api/thrones/'
   const [userList , setUserList] = useState('username')
+  const [throneList , setThroneList] = useState(null)
+  const [loading , setLoading] = useState(true)
+  const throneAPIPath = 'https://thrones-be.herokuapp.com/api/profiles/'
+  const thronePath = 'https://thrones-be.herokuapp.com/api/throne'
+  
 
-  function getUser(){
+  function getThroneInfo(){
     fetch(throneAPIPath)
-        .then(res => res.json())
-        .then(res => {setUserList(res)})
-        .catch(err => {console.error(err)})       
+      .then(res => res.json())
+      .then(res => {setUserList(res)})
+      .catch(err => {console.error(err)})       
+    fetch(thronePath)
+      .then(res => res.json())
+      .then(res => {setThroneList(res)})
+      .catch(err => {console.error(err)})   
   }  
   useEffect(() => {
-    getUser()
+    getThroneInfo()
+    setLoading(false)
   },[])
 
-  if(!userLoggedIn && userList != 'username'){
-      
+  if(!userLoggedIn && !loading){
       return (
         <div>
           <Route exact path = '/signup' component={SignInAndSignUpPage} />
@@ -40,7 +47,7 @@ function App() {
         
       )
   }
-  else{
+  else if(throneList != null){
     return (
       <div className="App">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"/>
@@ -49,7 +56,7 @@ function App() {
         <MainNav setUserLoggedIn = {setUserLoggedIn} />
         {/* <Route exact path = {`/dashboard/${currentUser.id}`} */}
         <Route exact path = '/'
-          render={(props) => <Dashboard {...props} />}
+          render={(props) => <Dashboard {...props} throneList = {throneList} />}
         />
         <Route exact path = '/profile'
           render={(props) => <Profile {...props}/>}
@@ -59,7 +66,7 @@ function App() {
       </div>
     );
   }
-  
+  else return null
 }
 
 export default App;
