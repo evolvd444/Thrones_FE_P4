@@ -25,10 +25,10 @@ export default function Profile(props) {
           <div class="card__body dev">
             <a class="tag tag--pill tag--main settings__btn" href=" "><i class="im im-edit"></i>
               Edit</a>
-            <img class="avatar avatar--xl dev__avatar" src={currentUser.user.profile_image} alt ="profleimage"/>
+            <img class="avatar avatar--xl dev__avatar" src={currentUser.profile_image} alt ="profleimage"/>
             <h2 class="dev__name">{}</h2>
             <p class="dev__title">{}</p>
-            <p class="dev__location">Based in {currentUser.user.location}</p>
+            <p class="dev__location">Based in {currentUser.location}</p>
 
 
           </div>
@@ -37,7 +37,7 @@ export default function Profile(props) {
       <div class="column column--2of3">
         <div class="devInfo">
           <h3 class="devInfo__title">About Me</h3>
-          <p class="devInfo__about">{currentUser.user.short_intro}</p>
+          <p class="devInfo__about">{currentUser.bio}</p>
         </div>
         <div class="settings">
           <h3 class="settings__title">Skills</h3>
