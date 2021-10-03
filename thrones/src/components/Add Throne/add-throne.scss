@@ -1,0 +1,9 @@
+#add-throne {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    min-width: 300px;
+    .title {
+      margin: 10px 0;
+    }
+  }

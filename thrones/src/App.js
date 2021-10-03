@@ -9,6 +9,7 @@ import MainNav from './components/MainNav.jsx';
 import About from './components/About/About.jsx';
 import FooterNav from './components/Footer/footerNav.jsx';
 import SignInAndSignUpPage from './components/signup-signin/signup-signin';
+import AddThrone from './components/Add Throne/add-throne';
 import './App.sass'
 
 // console.log(location)
@@ -53,6 +54,7 @@ function App() {
         <Route exact path = '/profile'
           render={(props) => <Profile {...props}/>}
         />
+         <Route exact path = '/add-throne' component={AddThrone}/>
          <Route exact path = '/about' component={About} />
          <Route exact path = '/signup' component={SignInAndSignUpPage} />
       </div>
