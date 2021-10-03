@@ -18,8 +18,8 @@ function App() {
   const [userList , setUserList] = useState('username')
   const [throneList , setThroneList] = useState(null)
   const [loading , setLoading] = useState(true)
-  const throneAPIPath = 'https://thrones-be.herokuapp.com/api/profiles/'
-  const thronePath = 'https://thrones-be.herokuapp.com/api/throne'
+  const throneAPIPath = 'https://thrones-be.herokuapp.com/api/profile/'
+  const thronePath = 'https://thrones-be.herokuapp.com/api/thrones/'
   
 
   function getThroneInfo(){

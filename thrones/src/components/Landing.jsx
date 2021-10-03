@@ -71,6 +71,9 @@ function Landing({setUserLoggedIn , userList} ) {
            <div id="newUser">
                <Link className = "link" to = "/signup">Sign Up</Link>
            </div>
+           {/* <button onClick = {()=> axios.put('https://thrones-be.herokuapp.com/api/profile/4eff5485-2d66-4660-ac58-3ade16f1e3c5/', { password: 'password' })}>
+           click to change password :)
+           </button> */}
            <br />
           {/* `/dashboard/${currentUser.id}` <Link to = '/' />*/}
 

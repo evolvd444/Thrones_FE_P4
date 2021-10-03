@@ -7,9 +7,9 @@ import thronetest from "../axiostest/thronetest";
 class SignUp extends React.Component {
     constructor() {
         super();
-        const {displayName, email, password, confirmPassword} =this.state;
+        // const {username, email, location, password, confirmPassword} = this.state;
         this.state = {
-            displayName: '',
+            username: '',
             email: '',
             location: '',
             password: '',
@@ -19,27 +19,15 @@ class SignUp extends React.Component {
 
         handleSubmit = async event => {
           event.preventDefault();
-          const {displayName, email, location , password, confirmPassword} = this.state;
+          const {username, email, location , password, confirmPassword} = this.state;
           
           if(password != confirmPassword) {
             alert("passwords do not match");
             return;
           }
-          else if(displayName != '' && email != '' && location != '' && password != ''){
-            
-            const obj = {
-              username: this.state.displayName,
-              name: this.state.displayName,
-              email: this.state.email,
-              location: this.state.location,
-              password: this.state.password,
-            }
-
-            //START
-            // console.log(thronetest.create(obj))
-            //END
+          else if(username != '' && email != '' && location != '' && password != ''){
               
-            axios.post('https://thrones-be.herokuapp.com/api/profiles/' , obj)
+            axios.post('https://thrones-be.herokuapp.com/api/profile/' , this.state)
             .then(res => {
               console.log(res.data)
             })
@@ -55,7 +43,7 @@ class SignUp extends React.Component {
         
 
         this.setState({
-          displayName: '', 
+          username: '', 
           email: '', 
           location: '',
           password: '', 
@@ -74,7 +62,7 @@ class SignUp extends React.Component {
 
       
         render() {
-        const {displayName, email, location , password, confirmPassword } = this.state;
+        const {username, email, location , password, confirmPassword } = this.state;
             return (
               <div id="sign-up">
                 <h2 className= "title"> I do not have an account </h2>
@@ -82,8 +70,8 @@ class SignUp extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                   <FormInput
                     type= "text"
-                    name= "displayName"
-                    value={displayName}
+                    name= "username"
+                    value={username}
                     onChange={this.handleChange}
                     label= "Display Name"
                     required
