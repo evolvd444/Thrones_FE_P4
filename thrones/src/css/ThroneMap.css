@@ -1,8 +1,15 @@
 #map{
     height: 80vh;
     width: 40vw;
-    margin: none;
+    margin: auto;
 }
 .throne-container{
     margin: none
+}
+@media all and (max-width: 376px) {
+    #map{
+        height: 50vh;
+        width: 80vw;
+        margin: auto;
+    }
 }

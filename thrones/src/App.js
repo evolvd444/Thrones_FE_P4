@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile/Profile.jsx'
 import MainNav from './components/MainNav.jsx';
 import About from './components/About/About.jsx';
+import FooterNav from './components/Footer/footerNav.jsx';
 import SignInAndSignUpPage from './components/signup-signin/signup-signin';
 import './App.sass'
 
@@ -44,6 +45,7 @@ function App() {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         
         <MainNav setUserLoggedIn = {setUserLoggedIn} />
+        <FooterNav setUserLoggedIn = {setUserLoggedIn} />
         {/* <Route exact path = {`/dashboard/${currentUser.id}`} */}
         <Route exact path = '/'
           render={(props) => <Dashboard {...props} />}

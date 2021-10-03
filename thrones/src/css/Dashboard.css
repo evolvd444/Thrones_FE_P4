@@ -1,6 +1,17 @@
 #dashboard{
     display: flex;
     flex-direction: row;
-    height: 80vh;
+    height: 50vh;
     /* justify-content: space-evenly; */
+}
+
+@media all and (max-width: 376px) {
+    #dashboard{
+        display: flex;
+        flex-direction: row;
+        height: 50vh;
+        margin: auto;
+        margin-top: 40%
+        /* justify-content: space-evenly; */
+    }
 }

@@ -4,7 +4,7 @@ import './sign-up.scss'
 class SignUp extends React.Component {
     constructor() {
         super();
-
+        const {displayName, email, password, confirmPassword} =this.state;
         this.state = {
             displayName: '',
             email: '',
@@ -27,7 +27,7 @@ class SignUp extends React.Component {
         //       const { user } = await auth.cre
         //   } catch (error) {
         // }
-        const {displayName, email, password, confirmPassword} =this.state;
+        
 
         this.setState({
           displayName: '', 
