@@ -7,3 +7,16 @@
     margin-top: 30vh;
     padding: 1%;
 }
+
+@media all and (max-width: 376px) {
+    #about {
+        background-color: rgba(54, 179, 211, 0.342);
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin-left: 4.5%;
+        margin-top: 20vh;
+        padding: 1%;
+    }
+
+}

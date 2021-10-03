@@ -11,7 +11,7 @@ export default function ThroneList({setUserLoggedIn}) {
     return (
         <div className = 'main-nav'>
             <nav class = 'navbar navbar-expand navbar-light bg-light'>
-                <img className='throne-logo' src="https://www.svgrepo.com/show/246760/throne.svg" alt="" />
+                <img id= "mobileThrone" className='throne-logo' src="https://www.svgrepo.com/show/246760/throne.svg" alt="" />
                 <span class="navbar-brand">Thrones</span>
                 <div class="navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
@@ -29,11 +29,11 @@ export default function ThroneList({setUserLoggedIn}) {
                         </li>                
                     </ul>     
                 </div>
-                <span class = 'col-5'className = 'searchbar-label' class="nav-item">Find a throne: </span>   
-                <form class = 'col-1.'>
+                {/* <span class = 'col-5'className = 'searchbar-label' class="nav-item">Find a throne: </span>   
+                <form id= "hideform" class = 'col-1.'>
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                </form>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> */}
+               
             </nav>
         </div>
     );

@@ -7,7 +7,7 @@ import thronetest from "../axiostest/thronetest";
 class SignUp extends React.Component {
     constructor() {
         super();
-
+        const {displayName, email, password, confirmPassword} =this.state;
         this.state = {
             displayName: '',
             email: '',

@@ -5,3 +5,22 @@ nav{
     width:3vw;
     height: auto;
 }
+
+#navbarSupportedContent{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+@media all and (max-width: 376px) {
+    .searchbar-label{
+        display: none;
+        
+    }
+    #hideform{
+        display: none;
+    }
+    #hidebutton{
+        display: none;
+    }
+}
+

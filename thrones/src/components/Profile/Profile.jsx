@@ -39,11 +39,7 @@ export default function Profile(props) {
           <h3 class="devInfo__title">About Me</h3>
           <p class="devInfo__about">{currentUser.bio}</p>
         </div>
-        <div class="settings">
-          <h3 class="settings__title">Skills</h3>
-          <a class="tag tag--pill tag--sub settings__btn tag--lg" href=" "><i
-              class="im im-plus"></i> Add Skill</a>
-        </div>
+        
 
         <table class="settings__table">
          
