@@ -6,16 +6,12 @@ import thronesLogo from "../images/throne-logo.png";
 function Landing({setUserLoggedIn , userList} ) {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
-  
   const [failedLogin, setFailedLogin] = useState("none");
   
-
-
-
   const login = () => {
     userList.map( (e) => {
       //successful login
-      if((e.user.username == username || e.user.email == username ) && (e.user.password == password)){
+      if((e.username == username || e.email == username ) && (e.password == password)){
         localStorage.setItem('userLoggedIn' , true)
         localStorage.setItem('currentUser' , JSON.stringify(e))
         setUserLoggedIn(localStorage.getItem('userLoggedIn'))

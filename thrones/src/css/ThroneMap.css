@@ -6,6 +6,7 @@
 .throne-container{
     margin: none
 }
+
 @media all and (max-width: 376px) {
     #map{
         height: 50vh;
@@ -13,3 +14,4 @@
         margin: auto;
     }
 }
+

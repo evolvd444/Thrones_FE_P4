@@ -12,34 +12,44 @@ import SignInAndSignUpPage from './components/signup-signin/signup-signin';
 import AddThrone from './components/Add Throne/add-throne';
 import './App.sass'
 
-// console.log(location)
-
 function App() {
   
   const [userLoggedIn , setUserLoggedIn] = useState(localStorage.getItem('userLoggedIn') || false)
-  //const [currentUser , setCurrentUser] = useState(null)
-  const throneAPIPath = 'https://thrones-be.herokuapp.com/api/thrones/'
   const [userList , setUserList] = useState('username')
+  const [throneList , setThroneList] = useState(null)
+  const [loading , setLoading] = useState(true)
+  const throneAPIPath = 'https://thrones-be.herokuapp.com/api/profiles/'
+  const thronePath = 'https://thrones-be.herokuapp.com/api/throne'
+  
 
-  function getUser(){
+  function getThroneInfo(){
     fetch(throneAPIPath)
-        .then(res => res.json())
-        .then(res => {setUserList(res)})
-        .catch(err => {console.error(err)})       
+      .then(res => res.json())
+      .then(res => {setUserList(res)})
+      .catch(err => {console.error(err)})       
+    fetch(thronePath)
+      .then(res => res.json())
+      .then(res => {setThroneList(res)})
+      .catch(err => {console.error(err)})   
   }  
   useEffect(() => {
-    getUser()
+    getThroneInfo()
+    setLoading(false)
   },[])
 
-  // useEffect(()=>{
-  //   console.log(userLoggedIn)
-  // },[userLoggedIn])
-
-  if(!userLoggedIn){
-    
-    return <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> 
+  if(!userLoggedIn && !loading){
+      return (
+        <div>
+          <Route exact path = '/signup' component={SignInAndSignUpPage} />
+          <Route exact path = '/'
+            render={(props) => <Landing {...props}  userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/>}
+          />
+          {/* <Landing userLoggedIn = {userLoggedIn} setUserLoggedIn = {setUserLoggedIn} userList = {userList}/> */}
+        </div>
+        
+      )
   }
-  else{
+  else if(throneList != null){
     return (
       <div className="App">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"/>
@@ -49,18 +59,18 @@ function App() {
         <FooterNav setUserLoggedIn = {setUserLoggedIn} />
         {/* <Route exact path = {`/dashboard/${currentUser.id}`} */}
         <Route exact path = '/'
-          render={(props) => <Dashboard {...props} />}
+          render={(props) => <Dashboard {...props} throneList = {throneList} />}
         />
         <Route exact path = '/profile'
           render={(props) => <Profile {...props}/>}
         />
          <Route exact path = '/add-throne' component={AddThrone}/>
          <Route exact path = '/about' component={About} />
-         <Route exact path = '/signup' component={SignInAndSignUpPage} />
+         
       </div>
     );
   }
-  
+  else return null
 }
 
 export default App;

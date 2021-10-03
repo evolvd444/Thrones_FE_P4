@@ -14,15 +14,17 @@ export default function ThroneList(props) {
     const handleSelect = async value => {};
 
     const populateThroneItems = () => {
-        for(let i = 0; i < 5 ; i++){
+        for(let i = 0; i < props.throneList.length ; i++){
             throneItems.push(
                 <p onClick = {mapCord}>
-                    Throne {i}: mahwah
+                    {/* owner + address */}
+                    {props.throneList[i].owner}: {props.throneList[i].address}
                 </p>
             )
         }
     }
     const mapCord = () =>{
+        //set props.gLat/gLng to throne location
         props.setGLat(props.gLat + aaa)
         props.setGLng(props.gLng + aaa)     
         aaa += 0.001;
