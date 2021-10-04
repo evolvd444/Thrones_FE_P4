@@ -24,8 +24,10 @@ class AddThrone extends React.Component {
 
         handleSubmit = async event => {
           event.preventDefault();
+
           const {owner, address, image, reviews} = this.state;
           const url = 'https://thrones-be.herokuapp.com/api/thrones/'
+
           axios.post(url, this.state)
         //   axios.post('http://localhost:8000/thrones/create-throne', this.state)
         .then(res => {
@@ -92,7 +94,7 @@ class AddThrone extends React.Component {
                 label= "review"
                 required
               />
-              <button type="submit">SIGNUP</button>
+              <button type="submit">Add Throne</button>
             </form>
               </div>
             
