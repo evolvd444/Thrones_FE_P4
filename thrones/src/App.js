@@ -12,6 +12,7 @@ import SignInAndSignUpPage from './components/signup-signin/signup-signin';
 import AddThrone from './components/Add Throne/add-throne';
 import EditProfile from './components/Edit-Profile/edit-profile';
 import './App.sass'
+import UpdateThrone from './components/UpdateThrone';
 
 function App() {
   
@@ -63,11 +64,12 @@ function App() {
           render={(props) => <Dashboard {...props} throneList = {throneList} />}
         />
         <Route exact path = '/profile'
-          render={(props) => <Profile {...props}/>}
+          render={(props) => <Profile {...props} throneList = {throneList}/>}
         />
          <Route exact path = '/add-throne' component={AddThrone}/>
          <Route exact path = '/about' component={About} />
          <Route exact path = '/edit-profile' component={EditProfile} />
+         <Route exact path = '/update-throne' component={UpdateThrone} />
       </div>
     );
   }
