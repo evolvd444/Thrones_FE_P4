@@ -2,17 +2,17 @@
 	box-sizing: border-box;
 }
 
-#edit-account {
+#profile {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-top: 32px;
 	background-size: cover;
-	background-color: blueviolet;
+	background-image: radial-gradient( circle farthest-corner at 50% 50%,  rgba(226, 171, 244, 0.433) 5%, rgba(219, 191, 226, 0.233) 70% );
 	background-blend-mode: multiply;
 	
 	@media (min-width: 1024px){
-		flex-direction: row;
+		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
 		height: 100vh;
@@ -33,17 +33,18 @@
 	
 }
 
-form {
+.tables {
 	display: flex;
 	flex-direction: column;
 	padding: 16px;
-	width: 320px;
+	width: 100%;
+	overflow-y: scroll;
 }
 
 h1 {
 	text-align: center;
 	text-transform: uppercase;
-	color: #fff;
+	color: rgb(89, 5, 168);
 	letter-spacing: 1px;
 	margin: 0;
 	margin-bottom: 16px;
@@ -68,23 +69,25 @@ input, textarea {
 	
 }
 
-button {
+buttonss {
+	display: block;
+	
 	font-size: 20px;
 	letter-spacing: 1px;
 	font-weight: bold;
 	text-transform: uppercase;
 	padding: 16px 0;
 	border-radius: 8px 24px 8px 24px;
-	border: 2px solid #327cff;
-	background-color: #327cff;
-	color: #fff;
+	border: .5px solid #5a07f395;
+	background-color: #0af7b055;
+	color: rgb(130, 7, 230);
 	outline: 0;
 	cursor: pointer;
 	margin-top: 8px;
 	
 	&:hover, &:active, &:focus {
 		background-color: #02348c;
-		border-color: #02348c;
+		border-color: #60028c;
 	}
 	
 }

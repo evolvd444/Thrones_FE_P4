@@ -10,6 +10,7 @@ import About from './components/About/About.jsx';
 import FooterNav from './components/Footer/footerNav.jsx';
 import SignInAndSignUpPage from './components/signup-signin/signup-signin';
 import AddThrone from './components/Add Throne/add-throne';
+import EditProfile from './components/Edit-Profile/edit-profile';
 import './App.sass'
 
 function App() {
@@ -66,7 +67,7 @@ function App() {
         />
          <Route exact path = '/add-throne' component={AddThrone}/>
          <Route exact path = '/about' component={About} />
-         
+         <Route exact path = '/edit-profile' component={EditProfile} />
       </div>
     );
   }
