@@ -7,52 +7,67 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete'
 import '../css/ThroneList.css'
 
-let aaa = 0.01
 export default function ThroneList(props) {
     const throneItems = []
+    const [test , setTest] = useState([])
     const [address , setAddress] = useState('')
-    const handleSelect = async value => {};
+    const [loading , setLoading] = useState(true)
+    //const handleSelect = async value => {};
 
-    const populateThroneItems = () => {
-        for(let i = 0; i < props.throneList.length ; i++){
-            throneItems.push(
-                <p onClick = {mapCord}>
-                    {/* owner + address */}
-                    {props.throneList[i].owner}: {props.throneList[i].address}
-                </p>
-            )
-        }
+    const populateThroneItems = (zip) => {
+        // setTest(props.throneList.filter(e => {
+        //     if(e.address != null && e.address.length >= 5 )   
+        //         return e.address.substring(e.address.length - 5, e.address.length) == zip  
+        // }))
+        // console.log('test length: ' + test.length)
+        // test.map(e => {
+        //     throneItems.push(
+        //         <p onClick = {mapCord}>
+        //             {e.owner}: {e.address}
+        //         </p>
+        //     )
+        // })
+        
+        
+         
     }
     const mapCord = () =>{
         //set props.gLat/gLng to throne location
-        props.setGLat(props.gLat + aaa)
-        props.setGLng(props.gLng + aaa)     
-        aaa += 0.001;
+        props.setGLat(props.gLat)
+        props.setGLng(props.gLng)     
         
-        //+LAT = N
-        //-LAT = S
-        //+lng = E
-        //-lng = W
+        //+LAT = N      -LAT = S        +lng = E        -lng = W
     }
-    populateThroneItems()
-
-    return (
-        <div className = 'throne-container'>
-            
-        <div className = 'throne-filters'>
-            <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: 'auto'}}  />
-            <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: 'auto'}}/>
-            {/* <PlacesAutocomplete 
-                value = {address} 
-                onChange = {setAddress} 
-                onSelect = {handleSelect}
-            >{}</PlacesAutocomplete> */}
-            
-                {/* <li></li> stretch goal(handicap accessible)*/}
+    
+    useEffect(()=> {
+        populateThroneItems(33328)
+        setLoading(false)
+        // console.log('adasd' + throneItems)
+    },[])
+    if(loading){
+        return null
+    }
+    else{
+        // console.log(throneItems)  
+        return (
+            <div className = 'throne-container'>
+                
+            <div className = 'throne-filters'>
+                <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: '80px'}}  />
+                <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: '80px'}}/>
+                {/* <PlacesAutocomplete 
+                    value = {address} 
+                    onChange = {setAddress} 
+                    onSelect = {handleSelect}
+                >{}</PlacesAutocomplete> */}
+                
+                    {/* <li></li> stretch goal(handicap accessible)*/}
+                </div>
+                <div className = 'throne-list'>
+                    {throneItems}
+                    
+                </div>
             </div>
-            <div className = 'throne-list'>
-                {throneItems}
-            </div>
-        </div>
-    );
+        );
+    }
 }
