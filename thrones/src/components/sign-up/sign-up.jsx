@@ -36,7 +36,7 @@ class SignUp extends React.Component {
             })
           }
 
-        //   try {
+        //try {
         //       const { user } = await auth.cre
         //   } catch (error) {
         // }

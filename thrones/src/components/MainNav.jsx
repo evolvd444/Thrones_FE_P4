@@ -24,6 +24,9 @@ export default function ThroneList({setUserLoggedIn}) {
                         <li class="nav-item">
                             <Link to = '/about' class="nav-link">About</Link>
                         </li>     
+                        <li class="nav-item">
+                            <Link  to = '/add-throne' class="nav-link">Add Throne</Link>
+                        </li>
                         <li>
                             <Link to = '/'><button onClick = {logout}>logout</button></Link>
                         </li>                

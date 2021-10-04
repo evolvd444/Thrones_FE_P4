@@ -50,22 +50,19 @@ export default function ThroneList(props) {
     else{
         // console.log(throneItems)  
         return (
-            <div className = 'throne-container'>
-                
-            <div className = 'throne-filters'>
-                <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: '80px'}}  />
-                <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: '80px'}}/>
-                {/* <PlacesAutocomplete 
-                    value = {address} 
-                    onChange = {setAddress} 
-                    onSelect = {handleSelect}
-                >{}</PlacesAutocomplete> */}
-                
-                    {/* <li></li> stretch goal(handicap accessible)*/}
+            <div className = 'throne-container'>  
+                <div className = 'throne-filters'>
+                    <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: '80px'}}  />
+                    <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: '80px'}}/>
+                    {/* <PlacesAutocomplete 
+                        value = {address} 
+                        onChange = {setAddress} 
+                        onSelect = {handleSelect}
+                    >{}</PlacesAutocomplete> */}
                 </div>
+
                 <div className = 'throne-list'>
-                    {throneItems}
-                    
+                    {throneItems}            
                 </div>
             </div>
         );
