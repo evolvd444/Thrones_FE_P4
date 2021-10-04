@@ -17,66 +17,60 @@ export default function Profile(props) {
   } else {
     return (
       <div id= "profile" >
-          <main class="settingsPage profile my-md">
-  <div class="container">
-    <div class="layout">
-      <div class="column column--1of3">
-        <div class="card text-center">
-          <div class="card__body dev">
-            <a class="tag tag--pill tag--main settings__btn" href=" "><i class="im im-edit"></i>
-              Edit</a>
-            <img class="avatar avatar--xl dev__avatar" src={currentUser.profile_image} alt ="profleimage"/>
-            <h2 class="dev__name">{}</h2>
-            <p class="dev__title">{}</p>
-            <p class="dev__location">Based in {currentUser.location}</p>
+     <h1>User Profile</h1>
+<table class = "tables">
+    <tr>
+        <th>Username</th>
+        <th>name</th>
+        <th>gender</th>
+        <th>Profile_Photo</th>
+        <th>Location</th>
+        <th>short_intro</th>
+        <th>Created</th>
+    
+    </tr>
+    
+    <tr>
+        <td>profile.username</td>
+        <td>profile.name</td>
+        <td>profile.gender</td>
+        <td><img src= "  " alt=""/></td>
+        <td>profile.location|slice:"150"</td>
+        <td>profile.short_intro|slice:"60"</td>
+        <td>profile.created</td>
+    </tr>
+</table>
+<br/>
+<br/>
+<h1>Thrones</h1>
+<table class = "tables">
+    <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Bathroom</th>
+        <th>Images</th>
+        <th>Reviews</th>
+        <th>Created</th>
+        <th></th>
+    </tr>
+   {/* //forloop */}
+    <tr>
+        <td>"id": "e0882cd3-371b-490b-a319-957903ff2be7"</td>
+        <td>currentuser.name</td>
+        <td>"owner": "Publix",</td>
+        <td><img  src=" " alt=""/></td>
+        <td>currentUser.reviews</td>
+        <td>bathroom.created</td>
+       
+    </tr>
+    
+</table>
+<div class ="crud-buttons">  
+        <button class ="buttonss" ><a href="{% url 'update-throne' bathroom.id %}">Edit</a></button>
+        <button class ="buttonss" ><a href="{% url 'delete-throne' bathroom.id %}">Delete</a></button>
+        <button class ="buttonss" ><a href="{% url 'bathroom' bathroom.id %}">View</a></button>
 
-
-          </div>
-        </div>
-      </div>
-      <div class="column column--2of3">
-        <div class="devInfo">
-          <h3 class="devInfo__title">About Me</h3>
-          <p class="devInfo__about">{currentUser.bio}</p>
-        </div>
-        
-
-        <table class="settings__table">
-         
-        </table>
-
-        <div class="settings">
-          <h3 class="settings__title">Projects</h3>
-          <a class="tag tag--pill tag--sub settings__btn tag--lg" href=" "><i
-              class="im im-plus"></i> Add Project</a>
-        </div>
-
-        <table class="settings__table">
-         {/* forloop */}
-          <tr>
-            <td class="settings__thumbnail">
-              <a href=" "><img src=" " alt="Project Thumbnail" /></a>
-            </td>
-            <td class="settings__tableInfo">
-              <a href=" ">{currentUser.owner}</a>
-              <p>{}</p>
-            </td>
-            <td class="settings__tableActions">
-              <a class="tag tag--pill tag--main settings__btn" href=" "><i
-                  class="im im-edit"></i> Edit</a>
-              <a class="tag tag--pill tag--main settings__btn"
-                href=" "><i class="im im-x-mark-circle-o"></i>
-                Delete</a>
-            </td>
-          </tr>
-          {/* endforloop */}
-
-        </table>
-      </div>
-    </div>
-  </div>
-</main>
-
+</div>
       </div>
     );
   }
