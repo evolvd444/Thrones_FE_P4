@@ -26,7 +26,7 @@ export default function Dashboard({throneList}) {
     else{
         return (
             <div id = 'dashboard'>
-                <button onClick = {()=>{
+                {/* <button onClick = {()=>{
                     console.log(obj)
                     axios.post('https://thrones-be.herokuapp.com/thrones/create-throne/')
                     .then(res => {
@@ -35,8 +35,8 @@ export default function Dashboard({throneList}) {
                     .catch(err => {
                       console.error('uh oh')
                     })
-                }}>ADD THRONE</button>
-                <ThroneList gLat = {gLat} gLng = {gLng} setGLat = {setGLat} setGLng = {setGLng} throneList = {throneList}/>
+                }}>ADD THRONE</button> */}
+                <ThroneList gLat = {gLat} gLng = {gLng} setGLat = {setGLat} setGLng = {setGLng} throneList = {throneList} currentUser = {currentUser}/>
                 <ThroneMap gLat = {gLat} gLng = {gLng} />
             </div>
         );  
