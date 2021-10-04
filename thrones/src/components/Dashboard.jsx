@@ -36,6 +36,8 @@ export default function Dashboard({throneList}) {
                       console.error('uh oh')
                     })
                 }}>ADD THRONE</button> */}
+                <form id= "bar" action="search"> </form>
+              
                 <ThroneList gLat = {gLat} gLng = {gLng} setGLat = {setGLat} setGLng = {setGLng} throneList = {throneList} currentUser = {currentUser}/>
                 <ThroneMap gLat = {gLat} gLng = {gLng} />
             </div>

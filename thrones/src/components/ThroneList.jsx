@@ -1,6 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import maleIcon from '../images/male-icon.png' 
 import femaleIcon from '../images/female-icon.png'
+import {DataContext} from './Datacontext'
 import PlacesAutocomplete, {
     geocodeByAddress, 
     getLatLng
@@ -52,8 +53,8 @@ export default function ThroneList(props) {
         return (
             <div className = 'throne-container'>  
                 <div className = 'throne-filters'>
-                    <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: '80px'}}  />
-                    <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: '80px'}}/>
+                    {/* <img className = 'male' src={maleIcon} alt="" style = {{height: '50px' , width: '80px'}}  />
+                    <img className = 'female'src={femaleIcon} alt="" style = {{height: '50px', width: '80px'}}/> */}
                     {/* <PlacesAutocomplete 
                         value = {address} 
                         onChange = {setAddress} 
