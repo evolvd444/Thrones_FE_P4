@@ -10,7 +10,7 @@ export default function ThroneList({setUserLoggedIn}) {
     }
     return (
         <div className = 'main-nav'>
-            <nav class = 'navbar navbar-expand navbar-light bg-light'>
+            <nav id = 'header' class = 'navbar navbar-expand navbar-light bg-light'>
                 <img id= "mobileThrone" className='throne-logo' src="https://www.svgrepo.com/show/246760/throne.svg" alt="" />
                 <span class="navbar-brand">Thrones</span>
                 <div class="navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +28,7 @@ export default function ThroneList({setUserLoggedIn}) {
                             <Link  to = '/add-throne' class="nav-link">Add Throne</Link>
                         </li>
                         <li>
-                            <Link to = '/'><button onClick = {logout}>logout</button></Link>
+                            <Link to = '/'><button id= "logout" onClick = {logout}>logout</button></Link>
                         </li>                
                     </ul>     
                 </div>
