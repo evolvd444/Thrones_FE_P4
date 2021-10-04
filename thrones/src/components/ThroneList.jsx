@@ -8,7 +8,7 @@ import PlacesAutocomplete, {
 import '../css/ThroneList.css'
 
 export default function ThroneList(props) {
-    const throneItems = []
+    let throneItems = []
     const [test , setTest] = useState([])
     const [address , setAddress] = useState('')
     const [loading , setLoading] = useState(true)

@@ -1,10 +1,10 @@
 import React from 'react';
-import FormInput from "../form-input/form-input.component";
-import './add-throne.scss'
+import FormInput from "./form-input/form-input.component"
+import './Add Throne/add-throne'
 import axios from 'axios'
 
 
-class AddThrone extends React.Component {
+class UpdateThrone extends React.Component {
     constructor() {
         super();
         const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -31,7 +31,7 @@ class AddThrone extends React.Component {
           const {owner, address, image, reviews} = this.state;
           const url = 'https://thrones-be.herokuapp.com/api/thrones/'
 
-          axios.post(url, this.state)
+          axios.put('https://thrones-be.herokuapp.com/api/thrones/809772a1-5291-48ae-b5e1-19ceb53c1af1/', this.state)
         //   axios.post('http://localhost:8000/thrones/create-throne', this.state)
         .then(res => {
           console.log(res.data)
@@ -63,7 +63,7 @@ class AddThrone extends React.Component {
             return (
               <div id="add-throne">
                 <h2 className= "title"> I have a contribution to make! </h2>
-                <span> Upload your Throne and Review!</span>
+                <span> Update your throne here!</span>
                 <form onSubmit={this.handleSubmit}>
                   <FormInput
                     type= "text"
@@ -97,7 +97,7 @@ class AddThrone extends React.Component {
                 label= "review"
                 required
               />
-              <button type="submit">Add Throne</button>
+              <button type="submit">Edit Throne</button>
             </form>
               </div>
             
@@ -105,4 +105,4 @@ class AddThrone extends React.Component {
           }
         }
 
-export default AddThrone;
+export default UpdateThrone;
