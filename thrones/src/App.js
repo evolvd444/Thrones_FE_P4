@@ -12,7 +12,7 @@ import SignInAndSignUpPage from './components/signup-signin/signup-signin';
 import AddThrone from './components/Add Throne/add-throne';
 import EditProfile from './components/Edit-Profile/edit-profile';
 import './App.sass'
-import UpdateThrone from './components/UpdateThrone';
+import UpdateThrone from './components/UpdateThrone/UpdateThrone.jsx';
 
 function App() {
   
