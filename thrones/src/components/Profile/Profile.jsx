@@ -51,7 +51,7 @@ export default function Profile(props) {
           </tr>
           
           <tr>
-              <td>profile.username</td>
+              <td>currentUser.name</td>
               <td>profile.name</td>
               <td>profile.gender</td>
               <td><img class = 'avatar' src= "  " alt=""/></td>
