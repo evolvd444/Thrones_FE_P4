@@ -8,26 +8,26 @@ function Landing({setUserLoggedIn , userList} ) {
   const [password, setPassword] = useState("");
   const [failedLogin, setFailedLogin] = useState("none");
   
-  const login = () => {
-    userList.map( (e) => {
-      //successful login
-      if((e.username == username || e.email == username ) && (e.password == password)){
-        localStorage.setItem('userLoggedIn' , true)
-        localStorage.setItem('currentUser' , JSON.stringify(e))
-        setUserLoggedIn(localStorage.getItem('userLoggedIn'))
-        //setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
-      }
+  // const login = () => {
+  //   userList.map( (e) => {
+  //     //successful login
+  //     if((e.username == username || e.email == username ) && (e.password == password)){
+  //       localStorage.setItem('userLoggedIn' , true)
+  //       localStorage.setItem('currentUser' , JSON.stringify(e))
+  //       setUserLoggedIn(localStorage.getItem('userLoggedIn'))
+  //       //setCurrentUser(JSON.parse(localStorage.getItem('currentUser')))
+  //     }
 
-      //unsuccessful login
-      else{
-        setFailedLogin("block")
-      }
-    })
-  }
+  //     //unsuccessful login
+  //     else{
+  //       setFailedLogin("block")
+  //     }
+  //   })
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
-    login();
+    // login();
     resetFields();
   }
 
